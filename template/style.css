@@ -73,6 +73,8 @@ a.brand {
 /* images */
 img {
     border-radius: 0.5rem;
+    height: 200px;
+    object-fit: contain;
 }
 img.medium {
     max-width: 29rem;
