@@ -1,0 +1,23 @@
+{
+  "name": "e-commerce-app",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "1. Create a react app\r 2. Add product attributes\r 3. Add link, images, name and prices",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosesojiko/amazon-clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mosesojiko/amazon-clone/issues"
+  },
+  "homepage": "https://github.com/mosesojiko/amazon-clone#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
