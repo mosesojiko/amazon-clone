@@ -7,10 +7,11 @@ const data = {
             category: "Shirts",
             image: '/images/product-1.jpg',
             price: 120,
+            countInStock: 10,
             brand: "Nike",
             rating: 1.5,
             numReviews: 10,
-            dsecription: "High quality product."
+            description: "High quality product."
         },
         {
             _id: '2',
@@ -18,10 +19,11 @@ const data = {
             category: "Shirts",
             image: '/images/product-2.jpg',
             price: 200,
+            countInStock: 20,
             brand: "Nike 2",
             rating: 2.0,
             numReviews: 8,
-            dsecription: "High quality product."
+            description: "High quality product."
         },
         {
             _id: '6',
@@ -29,10 +31,11 @@ const data = {
             category: "Shirts",
             image: '/images/product-6.jpg',
             price: 150,
+            countInStock: 0,
             brand: "Nike",
             rating: 4.8,
             numReviews: 11,
-            dsecription: "High quality product."
+            description: "High quality product."
         },
         {
             _id: '4',
@@ -40,10 +43,11 @@ const data = {
             category: "Shirts",
             image: '/images/product-4.jpg',
             price: 300,
+            countInStock: 15,
             brand: "Nike",
             rating: 4.9,
             numReviews: 27,
-            dsecription: "High quality product."
+            description: "High quality product."
         },
         {
             _id: '5',
@@ -51,10 +55,11 @@ const data = {
             category: "Shirts",
             image: '/images/product-5.jpg',
             price: 240,
+            countInStock: 5,
             brand: "Nike",
             rating: 5.0,
             numReviews: 34,
-            dsecription: "High quality product."
+            description: "High quality product."
         },
         {
             _id: '6',
@@ -62,10 +67,11 @@ const data = {
             category: "Shirts",
             image: '/images/product-6.jpg',
             price: 150,
+            countInStock: 12,
             brand: "Nike",
             rating: 4.5,
             numReviews: 7,
-            dsecription: "High quality product."
+            description: "High quality product."
         },
     ]
 }
