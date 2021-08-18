@@ -19,5 +19,9 @@
   "homepage": "https://github.com/mosesojiko/amazon-clone#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0"
   }
 }
