@@ -1,3 +1,4 @@
+## This project is in progress...
 1. Create a react app
 2. Add product attributes
 3. Add link, images, name and prices
