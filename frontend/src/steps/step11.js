@@ -1,3 +1,14 @@
+//Build Cart Screen
+
+/*
+1. create 2 columns for cart items and cart action
+2. cartItems.length === 0? cart is empty
+3. show item image, name qty and price
+4. Proceed to checkout button
+5. Implement remove from cart action
+
+*/
+
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
