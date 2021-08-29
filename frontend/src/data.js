@@ -2,7 +2,7 @@
 const data = {
     products: [
         {
-            _id: '1',
+            _id: 1,
             name: "Native Atire",
             category: "Shirts",
             image: '/images/product-1.jpg',
@@ -14,7 +14,7 @@ const data = {
             description: "High quality product."
         },
         {
-            _id: '2',
+            _id: 2,
             name: "Native Atire 2",
             category: "Shirts",
             image: '/images/product-2.jpg',
@@ -26,7 +26,7 @@ const data = {
             description: "High quality product."
         },
         {
-            _id: '6',
+            _id: 3,
             name: "Native Atire 3",
             category: "Shirts",
             image: '/images/product-6.jpg',
@@ -38,7 +38,7 @@ const data = {
             description: "High quality product."
         },
         {
-            _id: '4',
+            _id: 4,
             name: "Native Atire 4",
             category: "Shirts",
             image: '/images/product-4.jpg',
@@ -50,7 +50,7 @@ const data = {
             description: "High quality product."
         },
         {
-            _id: '5',
+            _id: 5,
             name: "Native Atire 5",
             category: "Shirts",
             image: '/images/product-5.jpg',
@@ -62,7 +62,7 @@ const data = {
             description: "High quality product."
         },
         {
-            _id: '6',
+            _id: 6,
             name: "Native Atire 6",
             category: "Shirts",
             image: '/images/product-6.jpg',

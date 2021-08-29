@@ -13,7 +13,8 @@ function HomeScreen() {
   const { loading, error, products } = productList
    useEffect(()=>{
       dispatch(listProducts())
-   }, [dispatch] )
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [listProducts] )
     return (
         <div>
           {

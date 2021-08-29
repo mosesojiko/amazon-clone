@@ -14,7 +14,6 @@ function ProductScreen(props) {
     // set product to read from product details in reducer store
     const productDetails = useSelector(state => state.productDetails)
     const { loading, error, product } = productDetails
-    
     useEffect(() =>{
         dispatch(detailsProduct(productId))
     }, [dispatch, productId])
