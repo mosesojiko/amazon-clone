@@ -190,6 +190,9 @@ img.medium {
 }
 
 /* alert */
+.loading {
+  display: block !important;
+}
 .success {
   color: #20a020
 }
