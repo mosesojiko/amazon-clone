@@ -1,6 +1,7 @@
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { signout } from './actions/userActions';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -8,9 +9,18 @@ import SigninScreen from './screens/SigninScreen';
 
 
 function App() {
-    //get access to cartItems from redux
+    //get access to cartItems from redux store
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart
+    //get access to userSignin from redux store
+    const userSignin = useSelector((state) => state.userSignin);
+    const { userInfo } = userSignin;
+
+    //sign out function
+    const dispatch = useDispatch()
+    const signoutHandler = () =>{
+        dispatch(signout())
+    }
   return (
     <BrowserRouter>
     <div className="grid-container">
@@ -24,7 +34,23 @@ function App() {
                 <span className = "badge">{cartItems.length}</span>
             )}
             </Link>
-            <Link to="/signin">Sign In</Link>
+            {
+                  /* Show name of user that signed in. Also implement signout */
+                userInfo? (
+                    <div className ="dropdown">
+                         <Link to ="#">{ userInfo.name } <i className ="fa fa-caret-down"></i> </Link>
+                         <ul className = "dropdown-content">
+                        <Link to ="#signout" onClick= { signoutHandler }> Sign Out </Link>
+                        </ul>
+                    </div>
+                    
+                ):
+                (
+                    <Link to="/signin">Sign In</Link>
+
+                )
+            }
+            
         </div>
     </header>
     <main>
