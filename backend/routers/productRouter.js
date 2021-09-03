@@ -21,7 +21,6 @@ productRouter.get('/seed', expressAsyncHandler(async(req, res)=>{
 productRouter.get('/:id', expressAsyncHandler( async(req, res) =>{
     const product = await Product.findById(req.params.id);
     if(product){
-        console.log(product)
         res.json(product)
     }else{
         res.status(404).send({ message: "Product not found."})

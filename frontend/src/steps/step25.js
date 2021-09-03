@@ -1,3 +1,126 @@
+// Add PayPal Button
+
+/* 
+1. get client id from paypal
+2. set it in .env file
+3. create route form /api/paypal/clientId
+4. create getPaypalClientID in api.js
+5. add paypay checkout script in OrderScreen.js
+6. show paypal button
+*/
+
+//to add paypal, go to
+// https://developer.paypal.com/home
+// then click on 'Log in to dashboard', signup and login, click on 'my apps & credentials'
+// select 'sandbox', click 'create app', enter app name, click 'create app'
+// creating app to get clientId and the rest
+//copy your client id, and use it in .env
+//AYlayFmZ383xlB4Y_6xQ977ELPbEfXddyU_F4pG6rmCFPdZaMYyfjpVR9NwSi55Om4HbEjSUf31ZJLVX
+
+//create an api to send the client id from backend to the frontend, do this in server.js
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+import productRouter from './routers/productRouter.js';
+import userRouter from './routers/userRouter.js';
+import orderRouter from './routers/orderRouter.js';
+
+dotenv.config();
+const app = express();
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+// eslint-disable-next-line no-undef
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use('/api/users', userRouter)
+app.use('/api/products', productRouter)
+app.use('/api/orders', orderRouter)
+
+//api for paypay
+app.get('/api/config/paypay', (req, res) =>{
+    // eslint-disable-next-line no-undef
+    res.send(process.env.PAYPAL_CLIENT_ID || 'sb') //sb stands for sandbox
+})
+
+
+//test if server is running well
+app.get('/', (req, res)=>{
+    res.send("Server is ready");
+})
+
+//to show errors
+app.use((err, req, res, next) =>{
+    res.status(500).send({ message: err.message })
+    next()
+})
+// eslint-disable-next-line no-undef
+const port = process.env.PORT || 4000
+app.listen(port, ()=>{
+    console.log(`Serve as http://localhost:${port}`)
+})
+
+
+//to show paypay button, install react-paypal-button-v2 in frontend folder
+
+//remove order : {} from orderReducers.js, state = {loading: true, order: {}},
+import { ORDER_CREATE_FAIL, ORDER_CREATE_REQUEST, ORDER_CREATE_RESET, ORDER_CREATE_SUCCESS, ORDER_DETAILS_FAIL, ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS } from "../constants/orderConstants";
+
+export const orderCreateReducer = ( state = {}, action) => {
+    switch(action.type) {
+        case ORDER_CREATE_REQUEST:
+            return { loading: true };
+
+        case ORDER_CREATE_SUCCESS:
+            return {
+                loading: false, success: true, order: action.payload
+            };
+            
+        case ORDER_CREATE_FAIL:
+            return {
+                loading: false, error: action.payload
+            }  
+        
+        case ORDER_CREATE_RESET:
+            return {};
+                
+        default: return state;
+    }
+}
+
+
+
+export const orderDetailsReducer = (state = {loading: true}, action) => {
+    switch(action.type) {
+        case ORDER_DETAILS_REQUEST:
+            return { loading: true}
+
+
+        case ORDER_DETAILS_SUCCESS:
+            return {
+                loading: false,
+                order: action.payload
+            };
+            
+            
+        case ORDER_DETAILS_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }    
+
+        default:
+            return state    
+    }
+}
+
+
+// update OrderScreen.js
 import Axios from 'axios';
 import { PayPalButton } from 'react-paypal-button-v2';
 import React, { useEffect, useState } from 'react';
