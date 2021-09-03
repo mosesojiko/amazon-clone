@@ -15,7 +15,12 @@
 // select 'sandbox', click 'create app', enter app name, click 'create app'
 // creating app to get clientId and the rest
 //copy your client id, and use it in .env
-//AYlayFmZ383xlB4Y_6xQ977ELPbEfXddyU_F4pG6rmCFPdZaMYyfjpVR9NwSi55Om4HbEjSUf31ZJLVX
+//Afyal4xnW_fZCqLYwX-j4AyogpsKXfUffpjMqyRriWjfOwerwaLJTgvyITOMc_N8jGOJX02Ln_0bAHE3
+
+//sambox account email: sb-xsqqu7477169@business.example.com
+// sandbox account password: -A56wVe=
+//api credential username: sb-xsqqu7477169_api1.business.example.com
+//api credential password: AH2S6RJR67U5SMME
 
 //create an api to send the client id from backend to the frontend, do this in server.js
 import express from 'express';
