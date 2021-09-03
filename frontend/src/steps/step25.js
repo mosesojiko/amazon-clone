@@ -19,8 +19,7 @@
 
 //sambox account email: sb-xsqqu7477169@business.example.com
 // sandbox account password: -A56wVe=
-//api credential username: sb-xsqqu7477169_api1.business.example.com
-//api credential password: AH2S6RJR67U5SMME
+
 
 //create an api to send the client id from backend to the frontend, do this in server.js
 import express from 'express';
